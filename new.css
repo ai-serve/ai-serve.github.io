@@ -1,0 +1,341 @@
+/*
+Neo-Ocean Minimal (2026)
+Original Centering Architecture Restored
+*/
+
+* {
+    font-family: "Avenir Next", sans-serif;
+}
+
+html, body {
+    margin: 0;
+}
+
+html {
+    background-size: cover;
+}
+
+/* ================================
+   COLOR SYSTEM
+================================ */
+
+:root {
+    --ocean-deep: #0F172A;
+    --ocean-mid: #1E293B;
+    --ocean-surface: #334155;
+
+    --accent-teal: #14B8A6;
+    --accent-teal-hover: #0D9488;
+    --accent-mist: #38BDF8;
+
+    --light-bg: #F1F5F9;
+    --light-surface: #E2E8F0;
+
+    --text-dark: #0F172A;
+    --text-light: #F8FAFC;
+}
+
+/* ================================
+   DARK MODE
+================================ */
+
+@media (prefers-color-scheme: dark) {
+
+    html {
+        background: linear-gradient(
+            135deg,
+            #0F172A 0%,
+            #0B1120 100%
+        ) no-repeat center center fixed;
+    }
+
+    div, .author, .advertisement {
+        color: var(--text-light);
+    }
+
+    #agreement {
+        background-color: var(--ocean-mid);
+    }
+
+    .advertisement {
+        background-color: var(--ocean-surface);
+    }
+
+    #upload-button {
+        color-scheme: dark;
+    }
+}
+
+/* ================================
+   LIGHT MODE
+================================ */
+
+@media (prefers-color-scheme: light) {
+
+    html {
+        background: linear-gradient(
+            135deg,
+            #F1F5F9 0%,
+            #E2E8F0 100%
+        ) no-repeat center center fixed;
+    }
+
+    div {
+        color: var(--text-dark);
+    }
+
+    .advertisement {
+        background-color: var(--light-surface);
+    }
+
+    #agreement {
+        background-color: white;
+    }
+
+    #upload-button {
+        color-scheme: normal;
+    }
+}
+
+/* ================================
+   BODY STRUCTURE (Original Style)
+================================ */
+
+body {
+    min-width: 200px;
+    margin-bottom: 60px;
+    clear: both;
+}
+
+/* ================================
+   HEADER (Centered Like Original)
+================================ */
+
+header {
+    background: linear-gradient(
+        90deg,
+        var(--accent-teal),
+        var(--accent-mist)
+    );
+
+    width: auto !important;
+    height: auto;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 1000;
+    color: white;
+
+    padding: 15px;
+    text-align: center;
+    margin: auto;
+}
+
+header h2 span {
+    font-family: "Arial Black", sans-serif;
+}
+
+/* ================================
+   GENERAL DIV CENTERING
+================================ */
+
+div {
+    padding: 15px;
+    text-align: center;
+    font-size: 2.5vh;
+    margin: auto;
+    width: auto;
+}
+
+/* ================================
+   TAB NAVIGATION (Original Float Layout)
+================================ */
+
+.tablinks {
+    margin-bottom: 8.6vh;
+}
+
+.tablink,
+#middle-tab .not-list button {
+    display: inline-flex;
+    background-color: var(--ocean-mid);
+    color: var(--text-light);
+    float: left;
+    justify-content: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 3vh;
+    font-size: 2.6vh;
+    font-weight: 400;
+    width: 25%;
+    transition: background 0.25s ease, color 0.25s ease;
+}
+
+.tablink:hover,
+#middle-tab .not-list button:hover {
+    background-color: var(--ocean-deep);
+    color: var(--accent-teal);
+}
+
+.tablink.active-tab {
+    background-color: var(--ocean-deep);
+    color: var(--accent-teal);
+}
+
+/* ================================
+   TAB CONTENT
+================================ */
+
+.tabcontent {
+    display: none;
+    height: 100%;
+    margin: auto;
+}
+
+/* ================================
+   BUTTON
+================================ */
+
+.button-17 {
+    align-items: center;
+    appearance: none;
+    background-color: var(--accent-teal);
+    border-radius: 24px;
+    border-style: none;
+    color: var(--ocean-deep);
+    cursor: pointer;
+    display: inline-flex;
+    margin-top: 4px;
+    font-size: 2vh;
+    height: 48px;
+    width: 200px;
+    justify-content: center;
+    letter-spacing: 1px;
+    padding: 2px 24px;
+    transition: background 0.25s ease, transform 0.15s ease;
+}
+
+.button-17:hover {
+    background: var(--accent-teal-hover);
+    transform: translateY(-2px);
+}
+
+.button-17:active {
+    transform: translateY(0);
+}
+
+/* ================================
+   AUTHOR
+================================ */
+
+.author {
+    margin: auto;
+    width: fit-content;
+    padding: 2.5vh;
+    font-size: 1.8vh;
+    font-weight: 300;
+}
+
+/* ================================
+   INPUT / OUTPUT
+================================ */
+
+#input {
+    align-items: center;
+    width: auto;
+    height: fit-content;
+}
+
+#output {
+    height: auto;
+    max-width: 80%;
+}
+
+/* ================================
+   AGREEMENT PANEL
+================================ */
+
+#agreement {
+    justify-content: inherit;
+    text-align: inherit;
+    margin: 1vh 3vh;
+    padding: 3vh 3vh 1vh 3vh;
+    border-radius: 24px;
+    font-size: 2vh;
+}
+
+#agreement ul {
+    list-style-type: square;
+}
+
+/* ================================
+   RIGHT TAB
+================================ */
+
+#right-tab {
+    justify-content: left;
+    text-align: left;
+}
+
+#middle-tab .not-list {
+    list-style-type: none;
+}
+
+#right2-tab,
+#middle-tab .not-list {
+    padding-left: 0;
+    padding-right: 0;
+    display: inline-grid;
+}
+
+#right2-tab ol,
+#right2-tab ul,
+#right2-tab h6,
+.author {
+    padding-left: 1vmin !important;
+}
+
+/* ================================
+   ADVERTISEMENT (Fixed Bottom)
+================================ */
+
+.advertisement {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    width: 100%;
+    height: 8%;
+    padding: 0;
+
+    align-items: center;
+    font-family: "Avenir Next Condensed", sans-serif;
+    display: inline-flex;
+    justify-content: center;
+}
+
+/* ================================
+   IMAGE
+================================ */
+
+img {
+    width: fit-content;
+    height: auto;
+    max-width: 200px;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ================================
+   OTHER
+================================ */
+
+#middle-tab {
+    margin-top: 100px !important;
+}
