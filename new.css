@@ -43,9 +43,9 @@ html {
 
     html {
         background: linear-gradient(
-            135deg,
-            #0F172A 0%,
-            #0B1120 100%
+                135deg,
+                #0F172A 0%,
+                #0B1120 100%
         ) no-repeat center center fixed;
     }
 
@@ -74,9 +74,9 @@ html {
 
     html {
         background: linear-gradient(
-            135deg,
-            #F1F5F9 0%,
-            #E2E8F0 100%
+                135deg,
+                #F1F5F9 0%,
+                #E2E8F0 100%
         ) no-repeat center center fixed;
     }
 
@@ -113,9 +113,9 @@ body {
 
 header {
     background: linear-gradient(
-        90deg,
-        var(--accent-teal),
-        var(--accent-mist)
+            90deg,
+            var(--accent-teal),
+            var(--accent-mist)
     );
 
     width: auto !important;
@@ -314,6 +314,13 @@ div {
     font-family: "Avenir Next Condensed", sans-serif;
     display: inline-flex;
     justify-content: center;
+}
+
+.advertisement a {
+    color: inherit; /* Inherits the exact text color */
+    font-family: inherit; /* Inherits the font family */
+    font-size: inherit; /* Inherits the font size */
+    text-decoration: inherit; /* Inherits the parent's text underline behavior */
 }
 
 /* ================================
