@@ -37,7 +37,7 @@
     <title>Image Gender Recognition</title></head>
 <body>
 <header>
-    <h2><span>Check their gender with a photo</span></h2>
+    <h2><span>Image gender detector</span></h2>
     <noscript>Sorry, you seem to have disabled JavaScript. This service relies heavily on it.</noscript>
 </header>
 
@@ -74,7 +74,7 @@
     <div id="left-tab" class="tabcontent">
         <div id="input">
 
-            <label for="file-input" id="input-label">Your Image File:</label><br>
+            <label for="file-input" id="input-label">Provide Your Image File For Gender Evaluation:</label><br>
             <input type="file"
                    class="button-17"
                    id="file-input"
@@ -100,6 +100,7 @@
     <div id="middle-tab" class="tabcontent">
         <ul>
             <li>
+                Donate via a third party provider by following the link:<br>
                 <a href="https://nowpayments.io/donation/superficial" target="_blank" rel="noreferrer noopener">
                     <img src="https://nowpayments.io/images/embeds/donation-button-white.svg"
                          alt="Cryptocurrency & Bitcoin donation button by NOWPayments">
@@ -172,6 +173,16 @@
         </div>
     </div>
     <div id="right2-tab" class="tabcontent">
+        <h5>Dataset and training</h5>
+        <ul>
+            <li>The network was trained on a meaningfully sized publicly available set of images.</li>
+            <li>Several data augmentation techniques were used.</li>
+            <li>The employed classification learning algorithm strives to look for features that make "male" faces different from "female" ones.
+                I. e., when the served result yields "female", it means that the neural net failed to recognize these distinct features.
+                However, as all neural nets are a "black box" mechanism, nothing can be certain of it.
+            </li>
+            <li>The dataset consisted of such images where the single human face takes up a great proportion of the image.</li>
+        </ul>
         <h5><i>Initial</i> tech stack</h5>
         <ul>
             <li>Python 3.10</li>
