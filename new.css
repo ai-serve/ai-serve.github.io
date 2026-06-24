@@ -290,7 +290,7 @@ div {
 }
 
 #right2-tab ol,
-#right2-tab ul,
+ul,
 #right2-tab h6,
 .author {
     padding-left: 1vmin !important;
@@ -307,8 +307,8 @@ div {
     right: 0;
     z-index: 99;
     width: 100%;
-    height: 8%;
-    padding: 0;
+    height: 10%;
+    padding: 2px;
     margin: 0;
 
     font-family: "Avenir Next Condensed", sans-serif;
@@ -341,7 +341,6 @@ div {
     width: 100%;
     text-align: center;
     padding: 1px 0;
-    line-height: 1.4;
 }
 
 
