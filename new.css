@@ -309,20 +309,41 @@ div {
     width: 100%;
     height: 8%;
     padding: 0;
+    margin: 0;
 
-    align-items: center;
     font-family: "Avenir Next Condensed", sans-serif;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    text-decoration: underline;
+    align-items: center;
 }
 
 .advertisement a {
-    color: inherit; /* Inherits the exact text color */
-    font-family: inherit; /* Inherits the font family */
-    font-size: inherit; /* Inherits the font size */
-    text-decoration: inherit; /* Inherits the parent's text underline behavior */
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    text-decoration: inherit;
 }
+
+.advertisement ul {
+    font-size: 1.8vh;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.advertisement ul li {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1px 0;
+    line-height: 1.4;
+}
+
 
 /* ================================
    IMAGE
