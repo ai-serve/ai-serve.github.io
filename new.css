@@ -354,16 +354,20 @@ img {
     padding: 0;
 }
 
-ul {
-    list-style-type: none;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
 /* ================================
    OTHER
 ================================ */
 
 #middle-tab {
     margin-top: 100px !important;
+}
+
+ul {
+    list-style-type: none;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+a {
+    color: var(--text-light);
 }
