@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ai-serve.github.io/sitemap.xml
+
+Disallow: /README.md
+Disallow: /LICENSE
+Disallow: /CONTRIBUTING.md

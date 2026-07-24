@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="latin-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Stan Ermokhin">
+
+    <link rel="icon" type="image/x-icon" href="/images/newfavicon.png"/>
+    <link rel="stylesheet" href="new.css">
+
+    <!-- GOOGLE DISCOVERY -->
+    <meta name="google-site-verification" content="o3Hh4I57OXKLaxcbpEwDSBUrX1b5S01RQb3PtjEqr2U"/>
+    <!-- END GOOGLE DISCOVERY -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DD79C684T9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-DD79C684T9');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+
+    <title>AI Image Gender Detector | Gender Detection From Image</title></head>
+<body>
+<header>
+    <h2><span>AI Image Gender Detector</span></h2>
+</header>
+
+<section class="tablinks">
+    <script>
+        function openPage(pageName, elmnt) {
+            let i, tabcontent, tablinks;
+
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remove active class from all tabs
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active-tab");
+            }
+
+            // Show selected tab + mark active
+            document.getElementById(pageName).style.display = "block";
+            elmnt.classList.add("active-tab");
+        }
+    </script>
+    <button class="tablink" onclick="openPage('left-tab', this)" id="defaultOpen">Genders</button>
+    <button class="tablink" onclick="openPage('middle-tab', this)">Support</button>
+    <button class="tablink" onclick="openPage('right-tab', this)">Notice</button>
+    <button class="tablink" onclick="openPage('right2-tab', this)">About</button>
+</section>
+<section class="upper">
+
+
+    <div id="left-tab" class="tabcontent">
+        <div id="input" class="emphasis">
+
+            <label for="file-input" id="input-label">Provide Your Image File For Gender Evaluation:</label><br>
+            <input type="file"
+                   class="button-17"
+                   id="file-input"
+                   onchange="myApp.previewFile()"
+                   onclick="myApp.onClickWarmUp()"
+                   accept=".png, .jpg, .jpeg, .bmp, .gif"><br>
+            <input type="button"
+                   class="button-17"
+                   role="button"
+                   id="upload-button"
+                   onclick="myApp.processImage()"
+                   value="Evaluate Gender">
+
+        </div>
+        <div id="output" class="emphasis">
+            <p id="serverMsg"></p>
+            <noscript>Sorry, you seem to have disabled JavaScript. This service relies heavily on it.</noscript>
+            <img height="" width="" src="" alt="" id="fileImage">
+            <p>
+                Current neural network version: <i id="model_version">to be acquired on evaluation</i>
+            </p>
+        </div>
+    </div>
+    <div id="middle-tab" class="tabcontent">
+        <div class="emphasis">
+            <p>Donate via a third party provider by following the link:</p>
+            <a href="https://nowpayments.io/donation/superficial" target="_blank" rel="noreferrer noopener">
+                <img src="https://nowpayments.io/images/embeds/donation-button-white.svg"
+                     alt="Cryptocurrency & Bitcoin donation button by NOWPayments">
+            </a>
+            <p>Alternatively, to support the developers of this service, consider using the affiliate links listed
+                below.</p>
+            <a href="https://www.effectivecpmnetwork.com/dsshxwkti?key=19835f9883c98803d10b205c610bbc29">Current ad
+                suggestion</a>
+        </div>
+    </div>
+    <div id="right-tab" class="tabcontent">
+        <div class="emphasis">
+            <h5>
+                ADVERTISEMENT DISCLAIMER
+            </h5>
+            <ul class="not-list">
+                <li>
+                    Advertisements presented to anyone who visits this website or the accompanying code repository
+                    (including, but not limited to, images, texts, links, codes, or other types of content)
+                    are delivered via a third party provider,
+                    and do not necessarily correspond with the content typical of this website.
+                    The developers, creators of this website,
+                    as well as hosting services and/or server owners are in no way responsible
+                    for the contents of the advertisements displayed therein,
+                    nor are they responsible for anyone's interactions with these advertisements
+                    or any consequences resulting from such interactions.
+                </li>
+            </ul>
+        </div>
+        <div class="emphasis">
+            <h5>
+                BY USING THIS SERVICE, YOU CONSENT TO THE CONDITIONS LISTED BELOW
+            </h5>
+            <h5>
+                USER AGREEMENT AND SECURITY NOTICE
+            </h5>
+            <ol>
+                <li>
+                    "Using" this service is defined as clicking any button,
+                    as well as any interaction with the servers' URI and/or URL.
+                </li>
+                <li>
+                    For all intents and purposes, the term "gender" refers to the biological definition,
+                    i.e. male or female.
+                </li>
+                <li>
+                    Each file attached will be processed through a deep learning neural network.
+                </li>
+                <li>
+                    When the file has been processed,
+                    it may or may not be attempted to be deleted.
+                </li>
+                <li>
+                    It may also be used for future training of the aforementioned network,
+                    as well as any new learning algorithm,
+                    whether it be a different neural network or any other algorithm.
+                </li>
+                <li>
+                    The processing of the file includes, but is not limited to:
+                    <ol type="a">
+                        <li>Evaluation through a computerized neural network,</li>
+                        <li>Temporary save of the file for the time of evaluation.</li>
+                    </ol>
+                </li>
+                <li>
+                    The version of the neural network currently in use,
+                    as well as any possible versions, does not guarantee 100% accurate or definitive results.
+                </li>
+                <li>
+                    The probabilistic nature of neural networks must be taken into account in its full capacity.
+                </li>
+                <li>
+                    The developers, creators, hosting services and/or server owners are in no way responsible
+                    for the contents of the files that are uploaded through this service.
+                </li>
+                <li>
+                    This service is intended strictly for entertainment, recreational, and comedic purposes.
+                    It does not reflect the views of the creators and is not intended to discriminate, demean,
+                    or cause offense. Output results should not be interpreted as definitive, factual, or malicious.
+                </li>
+                <li>
+                    All content presented to the user of this service is copyrighted with the copyright holder name
+                    specified under the main UI area; except where third party software is used. The license pertaining
+                    to the source code and additional
+                    conditions is available at:
+                    <a target="_blank" rel="noopener noreferrer"
+                       href="https://raw.githubusercontent.com/ai-serve/ai-serve.github.io/refs/heads/master/LICENSE.md">
+                        LICENSE.MD</a>
+                </li>
+                <li>
+                    The Advertisement Disclaimer displayed prior to this emphasis is fully incorporated herein.
+                </li>
+            </ol>
+        </div>
+        <div class="emphasis">
+            <h5>
+                IF YOU DO NOT AGREE TO OR OPPOSE ANY OF THESE TERMS, PLEASE LEAVE THIS WEBSITE IMMEDIATELY.
+            </h5>
+        </div>
+    </div>
+    <div id="right2-tab" class="tabcontent">
+        <div class="emphasis">
+            <h5>DATASET AND TRAINING</h5>
+            <ul class="not-list">
+                <li>The network was trained on a meaningfully sized publicly available set of images. Several data
+                    augmentation techniques were used.
+                </li>
+                <li>The employed classification learning algorithm strives to look for features that make "male" faces
+                    different from "female" ones.
+                    I.e., when the served result yields "female", it means that the neural net failed to recognize these
+                    distinct features.
+                    However, as all neural nets are a "black box" mechanism, nothing can be certain of it.
+                </li>
+                <li>The dataset consisted of such images where the single human face takes up a great proportion of the
+                    image (portrait).
+                </li>
+                <li>
+                    Gender detection from images relies on the technologies listed below.
+                </li>
+            </ul>
+        </div>
+        <div class="emphasis">
+            <h5>INITIAL TECH STACK</h5>
+            <ul class="not-list">
+                <li>Python 3.10</li>
+                <li>FastAPI</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>TensorFlow, AioFiles, Pydantic</li>
+                <li>Docker</li>
+                <li>Serverless infrastructure</li>
+            </ul>
+        </div>
+        <div class="emphasis">
+            <h5>CURRENT TECH STACK</h5>
+            <ul class="not-list">
+                <li><p>This is a front-end only application now.</p>
+                    <p><i>Powered by:</i></p></li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>TensorFlow.JS</li>
+            </ul>
+        </div>
+    </div>
+    <script>document.getElementById("defaultOpen").click();</script>
+    <script src="./index.js"></script>
+</section>
+
+
+<section class="lower">
+    <ul class="advertisement not-list">
+        <li>
+            <script>
+                atOptions = {
+                    'key': '4e408e7bc0c1e20378b3858350aa657c',
+                    'format': 'iframe',
+                    'height': 50,
+                    'width': 320,
+                    'params': {}
+                };
+            </script>
+            <script src="https://www.highperformanceformat.com/4e408e7bc0c1e20378b3858350aa657c/invoke.js"></script>
+
+        </li>
+    </ul>
+</section>
+
+<section class="author">
+    &copy; 2023–2026 | Stanislav (Stan) Ermokhin
+</section>
+</body>
+</html>
