@@ -273,7 +273,7 @@ div {
     max-width: 100vmin;
     margin: 1vmin auto;
     padding: 2vh 2vh 2vh 2vh;
-    border-radius: 10px;
+    border-radius: 25px;
 }
 
 .emphasis ol, .emphasis ul {
